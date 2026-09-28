@@ -1,0 +1,29 @@
+# Secrets — never commit
+.env
+aps/.env
+*.key
+
+# Local CAD scratch (large binaries)
+_scratch/
+
+# Build / test artifacts
+__pycache__/
+*.pyc
+title_block_demo.dxf
+title_block_demo.png
+
+# Debug log dumps — carry the APS client ID and expired S3 signatures
+dumplog.txt
+filllog.txt
+fulllog.txt
+fulllog2.txt
+vp2.txt
+vpcheck.txt
+*.log
+
+# .NET build output
+[Bb]in/
+[Oo]bj/
+
+# Client reference drawings — stamped deliverables, not code. Stay local.
+_ref/

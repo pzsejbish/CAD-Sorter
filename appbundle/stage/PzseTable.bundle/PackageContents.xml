@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0" Version="1.0" ProductCode="{FC8DCD93-95DE-41EC-8531-01EFA7C42C5F}"
+                    Name="PzseTable" AppVersion="1.0.0"
+                    Description="PZSE title-table automation" Author="PZSE">
+  <CompanyDetails Name="PZSE" />
+  <Components>
+    <ComponentEntry AppName="PzseTable" Version="1.0"
+                    ModuleName="./Contents/PzseTable.dll"
+                    AppDescription="Read and write ACAD_TABLE cells"
+                    AppType=".Net"
+                    LoadOnAutoCADStartup="True">
+      <RuntimeRequirements OS="Win64" Platform="AutoCAD*"
+                           SeriesMin="R25.0" SeriesMax="R26.1" />
+      <!-- Every command must be declared here, not just defined in C#. With
+           LoadOnCommandInvocation the loader only recognises what this block
+           lists; an undeclared command reports "Unknown command". -->
+      <Commands GroupName="PZSE">
+        <Command Global="PZSEDUMP" Local="PZSEDUMP" />
+        <Command Global="PZSEFILL" Local="PZSEFILL" />
+        <Command Global="PZSESAVE" Local="PZSESAVE" />
+        <Command Global="PZSESTRIP" Local="PZSESTRIP" />
+        <Command Global="PZSEVPOFF" Local="PZSEVPOFF" />
+        <Command Global="PZSEPLAN" Local="PZSEPLAN" />
+        <Command Global="PZSETILE" Local="PZSETILE" />
+        <Command Global="PZSEVPINFO" Local="PZSEVPINFO" />
+        <Command Global="PZSELAYERS" Local="PZSELAYERS" />
+        <Command Global="PZSESHEETS" Local="PZSESHEETS" />
+        <Command Global="PZSEMAKE" Local="PZSEMAKE" />
+        <Command Global="PZSEFREEZE" Local="PZSEFREEZE" />
+        <Command Global="PZSESLIM" Local="PZSESLIM" />
+        <Command Global="PZSEFAST" Local="PZSEFAST" />
+        <Command Global="PZSETITLE" Local="PZSETITLE" />
+        <Command Global="PZSEKEYLAB" Local="PZSEKEYLAB" />
+        <Command Global="PZSEPROFILE" Local="PZSEPROFILE" />
+      </Commands>
+    </ComponentEntry>
+  </Components>
+</ApplicationPackage>

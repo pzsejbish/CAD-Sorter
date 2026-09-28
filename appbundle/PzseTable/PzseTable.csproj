@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- net8.0-windows, not net8.0: AutoCAD's managed assemblies are
+         Windows-specific, and a platform-neutral target fails to load. -->
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>PzseTable</AssemblyName>
+    <RootNamespace>PzseTable</RootNamespace>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!--
+    Compile against AutoCAD's managed assemblies. Private=false keeps them OUT
+    of the output: the AutoCAD engine on the APS side supplies them at runtime,
+    and shipping our own copies would conflict.
+    LT ships these DLLs even though LT itself won't load third-party plugins,
+    which is what lets us build here and run there.
+  -->
+  <ItemGroup>
+    <Reference Include="acdbmgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD LT 2026\acdbmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="acmgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD LT 2026\acmgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="accoremgd">
+      <HintPath>C:\Program Files\Autodesk\AutoCAD LT 2026\accoremgd.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
